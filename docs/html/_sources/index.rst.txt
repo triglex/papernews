@@ -2,6 +2,7 @@
 .. include:: devdocs.rst
 .. include:: rest.rst
 .. include:: code.rst
+.. include:: spec.rst
 
 .. toctree::
    :hidden:
