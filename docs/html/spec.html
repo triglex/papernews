@@ -120,52 +120,47 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Specification
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#description-and-purpose-of-papernews">
    Description and purpose of Papernews
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#components">
    Components
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#web-interface">
    Web interface
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#links-agregator">
    Links agregator
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#website-parser">
    Website parser
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#news-generator">
    News generator
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parsed-news-api">
    Parsed news API
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interaction-between-components">
    Interaction between components
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estimated-time-and-cost">
    Estimated time and cost
   </a>
@@ -190,15 +185,14 @@
 <li><p>Interaction between components</p></li>
 <li><p>Estimated time and cost</p></li>
 </ol>
-</div>
 <div class="section" id="description-and-purpose-of-papernews">
-<h1>Description and purpose of Papernews<a class="headerlink" href="#description-and-purpose-of-papernews" title="Permalink to this headline">¶</a></h1>
+<h2>Description and purpose of Papernews<a class="headerlink" href="#description-and-purpose-of-papernews" title="Permalink to this headline">¶</a></h2>
 <p>Papernews is an application for generating short summary from given news agregators or directly from a newsletters web sites.
 The user can define which news he wants to follow and the application will generate new papernews at the end of each day.
 The user will be given the papernews as portable document format that he can recieve via e-mail or he can chose to download it.</p>
 </div>
 <div class="section" id="components">
-<h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <p>Papernews has the following components</p>
 <p>Version1</p>
 <ol class="arabic simple">
@@ -217,7 +211,7 @@ The user will be given the papernews as portable document format that he can rec
 </ol>
 </div>
 <div class="section" id="web-interface">
-<h1>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h1>
+<h2>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h2>
 <p>User can create, remove and edit his account.
 If user created account and logins, he will be able to access site.
 Web interface provides aggregated news (for eg. newspapers like format) from user defined rss links.
@@ -230,7 +224,7 @@ For example below the heading of one news there will be an ID like “123abcd”
 to search that news by ID or access <a class="reference external" href="https://papernews.com/short/123abcd">https://papernews.com/short/123abcd</a> to view that specific news article.</p>
 </div>
 <div class="section" id="links-agregator">
-<h1>Links agregator<a class="headerlink" href="#links-agregator" title="Permalink to this headline">¶</a></h1>
+<h2>Links agregator<a class="headerlink" href="#links-agregator" title="Permalink to this headline">¶</a></h2>
 <p>Component that recieves user RSS links, transforms it and prepares it for website parser.
 Specifically extracts metadata from RSS like:</p>
 <ol class="arabic simple">
@@ -241,32 +235,33 @@ Specifically extracts metadata from RSS like:</p>
 </ol>
 </div>
 <div class="section" id="website-parser">
-<h1>Website parser<a class="headerlink" href="#website-parser" title="Permalink to this headline">¶</a></h1>
+<h2>Website parser<a class="headerlink" href="#website-parser" title="Permalink to this headline">¶</a></h2>
 <p>Using prepared links scrapes website for summary of that news.
 After scraping it glues metadata from agregator and prepares newly created blob of data for news generator</p>
 </div>
 <div class="section" id="news-generator">
-<h1>News generator<a class="headerlink" href="#news-generator" title="Permalink to this headline">¶</a></h1>
+<h2>News generator<a class="headerlink" href="#news-generator" title="Permalink to this headline">¶</a></h2>
 <p>Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.</p>
 </div>
 <div class="section" id="parsed-news-api">
-<h1>Parsed news API<a class="headerlink" href="#parsed-news-api" title="Permalink to this headline">¶</a></h1>
+<h2>Parsed news API<a class="headerlink" href="#parsed-news-api" title="Permalink to this headline">¶</a></h2>
 <p>API thats provides access to the news data.</p>
 </div>
 <div class="section" id="interaction-between-components">
-<h1>Interaction between components<a class="headerlink" href="#interaction-between-components" title="Permalink to this headline">¶</a></h1>
+<h2>Interaction between components<a class="headerlink" href="#interaction-between-components" title="Permalink to this headline">¶</a></h2>
 <img alt="Interaction between components" src="_images/diag.png" />
 </div>
 <div class="section" id="estimated-time-and-cost">
-<h1>Estimated time and cost<a class="headerlink" href="#estimated-time-and-cost" title="Permalink to this headline">¶</a></h1>
+<h2>Estimated time and cost<a class="headerlink" href="#estimated-time-and-cost" title="Permalink to this headline">¶</a></h2>
 <img alt="Estimated time of imlpementation" src="_images/timeestimate.png" />
 <p>Estimated cost for 22 days of 2 developers is</p>
 <ol class="arabic simple">
-<li><p>22 days * 8h * 2 developers = 352, since our cost is $35/h the cost of programming and designing is $12320.</p></li>
-<li><p>Maintance 10h = $350</p></li>
-<li><p>Overhead 4h = $140</p></li>
+<li><p>22 days * 8h * 2 developers - 352, since our cost is $35/h the cost of programming and designing is $12320.</p></li>
+<li><p>Maintance 10h - $350</p></li>
+<li><p>Overhead 4h - $140</p></li>
 </ol>
 <p><strong>Total of $12810</strong></p>
+</div>
 </div>
 
 
