@@ -99,3 +99,27 @@ Estimated cost for 22 days of 2 developers is
 
 **Total of $12810**
 
+
+WBS
+--------------
+1. Web interface
+    1. Develop project schedule
+    2. Handle user management
+    3. Develop papernews list
+        1. Application landing page
+        2. Develop papernews templates
+        3. Develop default news subscriber (HackerNews(homepage), Reddit (homepage))
+        4. Develop custom news subscriber
+        5. Develop search (by id, date created, keywords, category)
+        6. Develop papernews custom time of day generator
+        7. Develop automatization of e-mailing papernews
+
+2. Links agregators
+    1. Develop project schedule
+    2. Develop metadata extractor from RSS
+    3. Develop metadata extractor for websites without RSS support
+
+3. Website parser
+4. News generator
+5. Parsed news API
+
