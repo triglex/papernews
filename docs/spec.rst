@@ -41,27 +41,68 @@ Version2
 --------------
 Web interface
 --------------
+User management
 User can create, remove and edit his account.
 If user created account and logins, he will be able to access site.
-Web interface provides aggregated news (for eg. newspapers like format) from user defined rss links.
-User can filter which news he will see using checkboxes of links that he proveded to the site.
-Web interface also provides export of news of his choice. 
-Export options are portable document format and/or e-mail message.
-Users can also schedule tailored e-mails from news of his choice.
-Web interface will created short news ID that will ease access to the news if user printed his daily news on paper.
-For example below the heading of one news there will be an ID like "123abcd" and user will be able 
-to search that news by ID or access https://papernews.com/short/123abcd to view that specific news article.
+User can chose papernews content based on predifined choice.
+::
+    User interface
+    -------------
+        Landing page
+            SEO (search engine optimizaion)
+            Page that describes Papernews features
 
-----------------
-Links agregator
-----------------
-Component that recieves user RSS links, transforms it and prepares it for website parser.
-Specifically extracts metadata from RSS like:
+        Design and imlpementation of papernews templates
+            Custom templates design
+            Custom templates implementation
 
-#. news heading
-#. user that posted that link
-#. source link (eg. hackernews)
-#. link to the actual news
+        Develop news subscriber
+            User can filter which news he will see using checkboxes of links that he proveded to the site
+            Web interface provides aggregated news (for eg. newspapers like format) from user defined rss links
+            Checkboxes include:
+                Hackernews homepage support
+                Reddit homepage support
+                Subreddit support
+                Support for current (maintenance) and new sites with each new version
+            Page has static (content choser, temaplete choser) and dynamic parts (changing templates of papernews)
+
+        Papernews Search
+            Search by:
+            - papernews id
+                - Web interface will created short news ID that will ease access to the news if user printed his daily news on paper.
+                - For example below the heading of one news there will be an ID like "123abcd" and user will be able 
+                to search that news by ID or access https://papernews.com/short/123abcd to view that specific news article.
+            - papernews date created
+            - papernews keywords
+            - papernews category
+            
+        Per hour frontpage generator
+            Papernews content can be updated for desired time periods of day
+
+        Papernews are portable
+            Papernews can be downloaded
+            Papernews can be recieved via e-mail
+                Users can also schedule tailored e-mails
+            Papernews can be viewed as HTML    
+
+    ----------------
+    Links agregator
+    ----------------
+        RSS metadata extractor
+            Component that recieves user RSS links, transforms it and prepares it for website parser.
+            Specifically extracts metadata from RSS like:
+                #. news heading
+                #. user that posted that link
+                #. source link (eg. hackernews)
+                #. link to the actual news
+
+        NoRSS metadata extractor
+            Component that recieves raw user links (without RSS support), scrapes them and prepares it for website parser.
+            Specifically extracts metadata like:
+                #. news heading
+                #. user that posted that link
+                #. source link (eg. hackernews)
+                #. link to the actual news
 
 ----------------
 Website parser
@@ -100,7 +141,7 @@ Estimated cost for 22 days of 2 developers is
 **Total of $12810**
 
 
-WBS
+Work Breakdown Structure (WBS)
 --------------
 1. Web interface
    1. Develop project schedule
@@ -120,6 +161,19 @@ WBS
    3. Develop metadata extractor for websites without RSS support
 
 3. Website parser
-4. News generator
-5. Parsed news API
+   1. Develop project schedule
+   2. Develop global scraper for key metadata (key = crucial parameters from which the papernews content will be generated, parameters are: html.body, html.title, html.p)
+   3. Develop parser that generate summary from the scraped data (scraped in step 2.)
+   4. Develop NLP (Natural Language Processor) that generates summary from the scraped data (scraped in step 2.)
 
+4. News generator
+   1. Develop project schedule
+   2. Develop HTML and PDF formats of papernews
+
+5. Parsed news API
+   1. Develop project schedule
+   2. Develop API interface for papernews
+
+6. Database
+   1. Develop project schedule
+   2. Develop database diagram
