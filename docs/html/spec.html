@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Specification &#8212; Papernews 0.1 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,12 +23,12 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -120,57 +121,72 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Specification
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#description-and-purpose-of-papernews">
    Description and purpose of Papernews
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#components">
    Components
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-interface">
+     Web interface
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links-agregator">
+     Links agregator
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#website-parser">
+     Website parser
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#news-generator">
+     News generator
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsed-news-api">
+     Parsed news API
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#database">
+     Database
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applcaiton-deployment">
+     Applcaiton deployment
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#web-interface">
-   Web interface
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#links-agregator">
-   Links agregator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#website-parser">
-   Website parser
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#news-generator">
-   News generator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parsed-news-api">
-   Parsed news API
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interaction-between-components">
    Interaction between components
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estimated-time-and-cost">
    Estimated time and cost
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#wbs">
-     WBS
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#work-breakdown-structure-wbs">
+   Work Breakdown Structure (WBS)
+  </a>
  </li>
 </ul>
 
@@ -183,7 +199,7 @@
         
               <div>
                 
-  <div class="section" id="specification">
+  <section id="specification">
 <h1>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h1>
 <p>Table of contents</p>
 <ol class="arabic simple">
@@ -192,74 +208,155 @@
 <li><p>Interaction between components</p></li>
 <li><p>Estimated time and cost</p></li>
 </ol>
-<div class="section" id="description-and-purpose-of-papernews">
-<h2>Description and purpose of Papernews<a class="headerlink" href="#description-and-purpose-of-papernews" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description-and-purpose-of-papernews">
+<h1>Description and purpose of Papernews<a class="headerlink" href="#description-and-purpose-of-papernews" title="Permalink to this headline">¶</a></h1>
 <p>Papernews is an application for generating short summary from given news agregators or directly from a newsletters web sites.
-The user can define which news he wants to follow and the application will generate new papernews at the end of each day.
-The user will be given the papernews as portable document format that he can recieve via e-mail or he can chose to download it.</p>
-</div>
-<div class="section" id="components">
-<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
-<p>Papernews has the following components</p>
-<p>Version1</p>
+The user can define which news he wants to follow and the application will generate new Papernews at the end of each day.
+The user will be given the Papernews as portable document format that he can recieve via e-mail or he can chose to download it.</p>
+</section>
+<section id="components">
+<h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
+<p>Papernews has the following components:</p>
 <ol class="arabic simple">
 <li><p>Web interface</p></li>
 <li><p>Links agregator</p></li>
 <li><p>Website parser</p></li>
 <li><p>News generator</p></li>
 <li><p>Parsed news API</p></li>
-</ol>
-<p>Version2</p>
-<ol class="arabic simple">
 <li><p>NLP summary and topic generator</p></li>
 <li><p>Parsers and scrapers for news without RSS</p></li>
 <li><p>User created list of news for category</p></li>
-<li><p>New templates</p></li>
+<li><p>Multiple Papernews templates</p></li>
 </ol>
-</div>
-<div class="section" id="web-interface">
+<section id="web-interface">
 <h2>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h2>
-<p>User can create, remove and edit his account.
+<p>User operations
+User can create, remove and edit his account.
 If user created account and logins, he will be able to access site.
-Web interface provides aggregated news (for eg. newspapers like format) from user defined rss links.
-User can filter which news he will see using checkboxes of links that he proveded to the site.
-Web interface also provides export of news of his choice.
-Export options are portable document format and/or e-mail message.
-Users can also schedule tailored e-mails from news of his choice.
-Web interface will created short news ID that will ease access to the news if user printed his daily news on paper.
-For example below the heading of one news there will be an ID like “123abcd” and user will be able
-to search that news by ID or access <a class="reference external" href="https://papernews.com/short/123abcd">https://papernews.com/short/123abcd</a> to view that specific news article.</p>
-</div>
-<div class="section" id="links-agregator">
+User can chose Papernews content based on predifined choice.</p>
+<dl class="simple">
+<dt>Landing page</dt><dd><ul class="simple">
+<li><p>SEO (search engine optimizaion)</p></li>
+<li><p>Page that describes Papernews features</p></li>
+</ul>
+</dd>
+<dt>Design and imlpementation of Papernews templates</dt><dd><ul class="simple">
+<li><p>Custom templates design</p></li>
+<li><p>Custom templates implementation</p></li>
+</ul>
+</dd>
+<dt>Develop news subscriber</dt><dd><ul class="simple">
+<li><p>Page has static (content choser, temaplete choser) and dynamic parts (changing templates of Papernews)</p></li>
+<li><p>User can filter which news he will see using checkboxes of links that he proveded to the site</p></li>
+<li><p>Web interface provides aggregated news (for eg. newspapers like format) from user defined rss links</p></li>
+<li><dl class="simple">
+<dt>Checkboxes include:</dt><dd><ul>
+<li><p>Hackernews homepage support</p></li>
+<li><p>Reddit homepage support</p></li>
+<li><p>Subreddit support</p></li>
+<li><p>Support for current (maintenance) and new sites with each new version</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Papernews Search</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Search by:</dt><dd><ul>
+<li><p>Papernews id</p></li>
+<li><p>Web interface will created short news ID that will ease access to the news if user printed his daily news on paper.</p></li>
+<li><p>For example below the heading of one news there will be an ID like “123abcd” and user will be able
+to search that news by ID or access <a class="reference external" href="https://Papernews.com/short/123abcd">https://Papernews.com/short/123abcd</a> to view that specific news article.</p></li>
+<li><p>Papernews date created</p></li>
+<li><p>Papernews keywords</p></li>
+<li><p>Papernews category</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Per hour frontpage generator</dt><dd><ul class="simple">
+<li><p>Papernews content can be updated for desired time periods of day</p></li>
+</ul>
+</dd>
+<dt>Papernews are portable</dt><dd><ul class="simple">
+<li><p>Papernews can be downloaded</p></li>
+<li><dl class="simple">
+<dt>Papernews can be recieved via e-mail</dt><dd><ul>
+<li><p>Users can also schedule tailored e-mails</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Papernews can be viewed as HTML</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="links-agregator">
 <h2>Links agregator<a class="headerlink" href="#links-agregator" title="Permalink to this headline">¶</a></h2>
-<p>Component that recieves user RSS links, transforms it and prepares it for website parser.
-Specifically extracts metadata from RSS like:</p>
-<ol class="arabic simple">
+<dl class="simple">
+<dt>RSS metadata extractor</dt><dd><ul class="simple">
+<li><p>Component that recieves user RSS links, transforms it and prepares it for website parser.</p></li>
+<li><dl class="simple">
+<dt>Specifically extracts metadata from RSS like:</dt><dd><ol class="arabic simple">
 <li><p>news heading</p></li>
 <li><p>user that posted that link</p></li>
 <li><p>source link (eg. hackernews)</p></li>
 <li><p>link to the actual news</p></li>
 </ol>
-</div>
-<div class="section" id="website-parser">
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>NoRSS metadata extractor</dt><dd><ul class="simple">
+<li><p>Component that recieves raw user links (without RSS support), scrapes them and prepares it for website parser.</p></li>
+<li><dl class="simple">
+<dt>Specifically extracts metadata like:</dt><dd><ol class="arabic simple">
+<li><p>news heading</p></li>
+<li><p>user that posted that link</p></li>
+<li><p>source link (eg. hackernews)</p></li>
+<li><p>link to the actual news</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="website-parser">
 <h2>Website parser<a class="headerlink" href="#website-parser" title="Permalink to this headline">¶</a></h2>
 <p>Using prepared links scrapes website for summary of that news.
 After scraping it glues metadata from agregator and prepares newly created blob of data for news generator</p>
-</div>
-<div class="section" id="news-generator">
+</section>
+<section id="news-generator">
 <h2>News generator<a class="headerlink" href="#news-generator" title="Permalink to this headline">¶</a></h2>
 <p>Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.</p>
-</div>
-<div class="section" id="parsed-news-api">
+</section>
+<section id="parsed-news-api">
 <h2>Parsed news API<a class="headerlink" href="#parsed-news-api" title="Permalink to this headline">¶</a></h2>
 <p>API thats provides access to the news data.</p>
-</div>
-<div class="section" id="interaction-between-components">
-<h2>Interaction between components<a class="headerlink" href="#interaction-between-components" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="database">
+<h2>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h2>
+<p>Database that stores information about users and Papernews</p>
+</section>
+<section id="applcaiton-deployment">
+<h2>Applcaiton deployment<a class="headerlink" href="#applcaiton-deployment" title="Permalink to this headline">¶</a></h2>
+<p>Deployment of the Papernews applcaiton</p>
+</section>
+</section>
+<section id="interaction-between-components">
+<h1>Interaction between components<a class="headerlink" href="#interaction-between-components" title="Permalink to this headline">¶</a></h1>
 <img alt="Interaction between components" src="_images/diag.png" />
-</div>
-<div class="section" id="estimated-time-and-cost">
-<h2>Estimated time and cost<a class="headerlink" href="#estimated-time-and-cost" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="estimated-time-and-cost">
+<h1>Estimated time and cost<a class="headerlink" href="#estimated-time-and-cost" title="Permalink to this headline">¶</a></h1>
 <img alt="Estimated time of imlpementation" src="_images/timeestimate.png" />
 <p>Estimated cost for 22 days of 2 developers is</p>
 <ol class="arabic simple">
@@ -268,22 +365,23 @@ After scraping it glues metadata from agregator and prepares newly created blob 
 <li><p>Overhead 4h - $140</p></li>
 </ol>
 <p><strong>Total of $12810</strong></p>
-<div class="section" id="wbs">
-<h3>WBS<a class="headerlink" href="#wbs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="work-breakdown-structure-wbs">
+<h1>Work Breakdown Structure (WBS)<a class="headerlink" href="#work-breakdown-structure-wbs" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic simple">
+<li><p>Develop project schedule</p></li>
 <li><dl class="simple">
 <dt>Web interface</dt><dd><ol class="arabic simple">
-<li><p>Develop project schedule</p></li>
-<li><p>Handle user management</p></li>
+<li><p>Handle user operations</p></li>
 <li><dl class="simple">
-<dt>Develop papernews list</dt><dd><ol class="arabic simple">
+<dt>Develop Papernews list</dt><dd><ol class="arabic simple">
 <li><p>Application landing page</p></li>
-<li><p>Develop papernews templates</p></li>
+<li><p>Develop Papernews templates</p></li>
 <li><p>Develop default news subscriber (HackerNews(homepage), Reddit (homepage))</p></li>
 <li><p>Develop custom news subscriber</p></li>
 <li><p>Develop search (by id, date created, keywords, category)</p></li>
-<li><p>Develop papernews custom time of day generator</p></li>
-<li><p>Develop automatization of e-mailing papernews</p></li>
+<li><p>Develop Papernews custom time of day generator</p></li>
+<li><p>Develop automatization of e-mailing Papernews</p></li>
 </ol>
 </dd>
 </dl>
@@ -294,20 +392,52 @@ After scraping it glues metadata from agregator and prepares newly created blob 
 </li>
 <li><dl class="simple">
 <dt>Links agregators</dt><dd><ol class="arabic simple">
-<li><p>Develop project schedule</p></li>
 <li><p>Develop metadata extractor from RSS</p></li>
 <li><p>Develop metadata extractor for websites without RSS support</p></li>
 </ol>
 </dd>
 </dl>
 </li>
-<li><p>Website parser</p></li>
-<li><p>News generator</p></li>
-<li><p>Parsed news API</p></li>
+<li><dl class="simple">
+<dt>Website parser</dt><dd><ol class="arabic simple">
+<li><p>Develop global scraper for key metadata (key = crucial parameters from which the Papernews content will be generated, parameters are: html.body, html.title, html.p)</p></li>
+<li><p>Develop parser that generates summary from scraped data (scraped in step 2.)</p></li>
+<li><p>Develop NLP (Natural Language Processor) that generates summary from scraped data (scraped in step 2.)</p></li>
 </ol>
-</div>
-</div>
-</div>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>News generator</dt><dd><ol class="arabic simple">
+<li><p>Develop HTML and PDF formats of Papernews</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PapernNewsAPI</dt><dd><ol class="arabic simple">
+<li><p>Develop API interface for Papernews</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Database</dt><dd><ol class="arabic simple">
+<li><p>Develop database</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Deployment</dt><dd><ol class="arabic simple">
+<li><p>Develop project schedule</p></li>
+<li><p>Application deployment</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
 
 
               </div>
