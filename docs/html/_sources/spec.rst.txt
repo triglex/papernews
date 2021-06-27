@@ -11,14 +11,14 @@ Table of contents
 
 
 Description and purpose of Papernews
-====================================
+------------------------------------
 Papernews is an application for generating short summary from given news agregators or directly from a newsletters web sites.
 The user can define which news he wants to follow and the application will generate new Papernews at the end of each day.
 The user will be given the Papernews as portable document format that he can recieve via e-mail or he can chose to download it.
 
 
 Components
-==========
+----------
 
 Papernews has the following components:
 
@@ -34,7 +34,7 @@ Papernews has the following components:
 
 
 Web interface
--------------
+^^^^^^^^^^^^^
 
 User operations
 User can create, remove and edit his account.
@@ -81,7 +81,7 @@ Papernews are portable
 
 
 Links agregator
----------------
+^^^^^^^^^^^^^^^
 RSS metadata extractor
     * Component that recieves user RSS links, transforms it and prepares it for website parser.
     * Specifically extracts metadata from RSS like:
@@ -100,37 +100,37 @@ NoRSS metadata extractor
 
 
 Website parser
---------------
+^^^^^^^^^^^^^^
 Using prepared links scrapes website for summary of that news.
 After scraping it glues metadata from agregator and prepares newly created blob of data for news generator
 
 
 News generator
---------------
+^^^^^^^^^^^^^^3
 Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.
 
 
 Parsed news API
----------------
+^^^^^^^^^^^^^^^
 API thats provides access to the news data.
 
 
 Database
---------
+^^^^^^^^
 Database that stores information about users and Papernews
 
 Applcaiton deployment
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Deployment of the Papernews applcaiton
 
 Interaction between components
-==============================
+------------------------------
 .. image:: img/diag.png
   :alt: Interaction between components
 
 
 Estimated time and cost
-=======================
+-----------------------
 .. image:: img/timeestimate.png
   :alt: Estimated time of imlpementation
 
@@ -144,7 +144,7 @@ Estimated cost for 22 days of 2 developers is
 
 
 Work Breakdown Structure (WBS)
-==============================
+------------------------------
 1. Develop project schedule
 2. Web interface
     1. Handle user operations

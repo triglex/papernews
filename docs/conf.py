@@ -60,5 +60,5 @@ html_theme_options = {
     "use_edit_page_button": True,
     "use_repository_button": True,
     "use_download_button": True,
-    "single_page": True
+    "single_page": False
 }

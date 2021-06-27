@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Specification &#8212; Papernews 0.1 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -23,18 +22,20 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Solution architecture" href="devdocs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -48,8 +49,40 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-2 bd-sidebar site-navigation show single-page" id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Papernews 0.1 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="devdocs.html">
+   Solution architecture
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Specification
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
 </div>
 
 
@@ -63,6 +96,15 @@
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
             
             
 <div class="dropdown-buttons-trigger">
@@ -121,69 +163,59 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Specification
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#description-and-purpose-of-papernews">
    Description and purpose of Papernews
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#components">
    Components
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#web-interface">
      Web interface
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#links-agregator">
      Links agregator
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#website-parser">
      Website parser
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#news-generator">
-     News generator
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#parsed-news-api">
      Parsed news API
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#database">
      Database
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#applcaiton-deployment">
      Applcaiton deployment
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interaction-between-components">
    Interaction between components
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estimated-time-and-cost">
    Estimated time and cost
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#work-breakdown-structure-wbs">
    Work Breakdown Structure (WBS)
   </a>
@@ -199,7 +231,7 @@
         
               <div>
                 
-  <section id="specification">
+  <div class="section" id="specification">
 <h1>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h1>
 <p>Table of contents</p>
 <ol class="arabic simple">
@@ -208,15 +240,14 @@
 <li><p>Interaction between components</p></li>
 <li><p>Estimated time and cost</p></li>
 </ol>
-</section>
-<section id="description-and-purpose-of-papernews">
-<h1>Description and purpose of Papernews<a class="headerlink" href="#description-and-purpose-of-papernews" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description-and-purpose-of-papernews">
+<h2>Description and purpose of Papernews<a class="headerlink" href="#description-and-purpose-of-papernews" title="Permalink to this headline">¶</a></h2>
 <p>Papernews is an application for generating short summary from given news agregators or directly from a newsletters web sites.
 The user can define which news he wants to follow and the application will generate new Papernews at the end of each day.
 The user will be given the Papernews as portable document format that he can recieve via e-mail or he can chose to download it.</p>
-</section>
-<section id="components">
-<h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <p>Papernews has the following components:</p>
 <ol class="arabic simple">
 <li><p>Web interface</p></li>
@@ -229,8 +260,8 @@ The user will be given the Papernews as portable document format that he can rec
 <li><p>User created list of news for category</p></li>
 <li><p>Multiple Papernews templates</p></li>
 </ol>
-<section id="web-interface">
-<h2>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="web-interface">
+<h3>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h3>
 <p>User operations
 User can create, remove and edit his account.
 If user created account and logins, he will be able to access site.
@@ -295,9 +326,9 @@ to search that news by ID or access <a class="reference external" href="https://
 </ul>
 </dd>
 </dl>
-</section>
-<section id="links-agregator">
-<h2>Links agregator<a class="headerlink" href="#links-agregator" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="links-agregator">
+<h3>Links agregator<a class="headerlink" href="#links-agregator" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
 <dt>RSS metadata extractor</dt><dd><ul class="simple">
 <li><p>Component that recieves user RSS links, transforms it and prepares it for website parser.</p></li>
@@ -328,35 +359,34 @@ to search that news by ID or access <a class="reference external" href="https://
 </ul>
 </dd>
 </dl>
-</section>
-<section id="website-parser">
-<h2>Website parser<a class="headerlink" href="#website-parser" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="website-parser">
+<h3>Website parser<a class="headerlink" href="#website-parser" title="Permalink to this headline">¶</a></h3>
 <p>Using prepared links scrapes website for summary of that news.
 After scraping it glues metadata from agregator and prepares newly created blob of data for news generator</p>
-</section>
-<section id="news-generator">
-<h2>News generator<a class="headerlink" href="#news-generator" title="Permalink to this headline">¶</a></h2>
-<p>Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.</p>
-</section>
-<section id="parsed-news-api">
-<h2>Parsed news API<a class="headerlink" href="#parsed-news-api" title="Permalink to this headline">¶</a></h2>
+<p>News generator
+^^^^^^^^^^^^^^3
+Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.</p>
+</div>
+<div class="section" id="parsed-news-api">
+<h3>Parsed news API<a class="headerlink" href="#parsed-news-api" title="Permalink to this headline">¶</a></h3>
 <p>API thats provides access to the news data.</p>
-</section>
-<section id="database">
-<h2>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
 <p>Database that stores information about users and Papernews</p>
-</section>
-<section id="applcaiton-deployment">
-<h2>Applcaiton deployment<a class="headerlink" href="#applcaiton-deployment" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="applcaiton-deployment">
+<h3>Applcaiton deployment<a class="headerlink" href="#applcaiton-deployment" title="Permalink to this headline">¶</a></h3>
 <p>Deployment of the Papernews applcaiton</p>
-</section>
-</section>
-<section id="interaction-between-components">
-<h1>Interaction between components<a class="headerlink" href="#interaction-between-components" title="Permalink to this headline">¶</a></h1>
+</div>
+</div>
+<div class="section" id="interaction-between-components">
+<h2>Interaction between components<a class="headerlink" href="#interaction-between-components" title="Permalink to this headline">¶</a></h2>
 <img alt="Interaction between components" src="_images/diag.png" />
-</section>
-<section id="estimated-time-and-cost">
-<h1>Estimated time and cost<a class="headerlink" href="#estimated-time-and-cost" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="estimated-time-and-cost">
+<h2>Estimated time and cost<a class="headerlink" href="#estimated-time-and-cost" title="Permalink to this headline">¶</a></h2>
 <img alt="Estimated time of imlpementation" src="_images/timeestimate.png" />
 <p>Estimated cost for 22 days of 2 developers is</p>
 <ol class="arabic simple">
@@ -365,9 +395,9 @@ After scraping it glues metadata from agregator and prepares newly created blob 
 <li><p>Overhead 4h - $140</p></li>
 </ol>
 <p><strong>Total of $12810</strong></p>
-</section>
-<section id="work-breakdown-structure-wbs">
-<h1>Work Breakdown Structure (WBS)<a class="headerlink" href="#work-breakdown-structure-wbs" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="work-breakdown-structure-wbs">
+<h2>Work Breakdown Structure (WBS)<a class="headerlink" href="#work-breakdown-structure-wbs" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Develop project schedule</p></li>
 <li><dl class="simple">
@@ -437,7 +467,8 @@ After scraping it glues metadata from agregator and prepares newly created blob 
 </dl>
 </li>
 </ol>
-</section>
+</div>
+</div>
 
 
               </div>
@@ -445,6 +476,7 @@ After scraping it glues metadata from agregator and prepares newly created blob 
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="devdocs.html" title="previous page">Solution architecture</a>
 
         </div>
         
