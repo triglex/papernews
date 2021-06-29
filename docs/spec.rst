@@ -106,7 +106,7 @@ After scraping it glues metadata from agregator and prepares newly created blob 
 
 
 News generator
-^^^^^^^^^^^^^^3
+^^^^^^^^^^^^^^
 Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.
 
 
@@ -119,8 +119,8 @@ Database
 ^^^^^^^^
 Database that stores information about users and Papernews
 
-Applcaiton deployment
-^^^^^^^^^^^^^^^^^^^^^
+Application deployment
+^^^^^^^^^^^^^^^^^^^^^^
 Deployment of the Papernews applcaiton
 
 Interaction between components
@@ -145,36 +145,44 @@ Estimated cost for 22 days of 2 developers is
 
 Work Breakdown Structure (WBS)
 ------------------------------
-1. Develop project schedule
-2. Web interface
-    1. Handle user operations
-    2. Develop Papernews list
-        1. Application landing page
-        2. Develop Papernews templates
-        3. Develop default news subscriber (HackerNews(homepage), Reddit (homepage))
-        4. Develop custom news subscriber
-        5. Develop search (by id, date created, keywords, category)
-        6. Develop Papernews custom time of day generator
-        7. Develop automatization of e-mailing Papernews
+1. Develop project schedule | (Estimate 2h BC/4h WC) | I1
+2. Database | (Estimate 4h BC/8h WC)
+   * Database diagram | (Estimate 4h) | I1
+3. Web interface | (Estimate 41h BC/80h WC)
+     * Papernews Frontend | (Estimate 17h)
+         * Landing page | (Estimate 5h)
+            * SEO (search engine optimizaion) | (Estimate 4h) | I3
+            * Page that describes Papernews features | (Estimate 1h) | I2
+         * Design and implementation of Papernews templates | (Estimate 6h)
+            * Custom templates design | (Estimate 3h) | I1
+            * Custom templates implementation | (Estimate 3h) | I2
+         * Static parts of Papernews | (Estimate 6h)
+            * User pages (Login, Register, User profile) | (Estimate 3h) | I1
+            * Base layout (news checkbox filter, navbar) | (Estimate 3h) | I1
+     * Papernews Backend | (Estimate 24h)
+         * User operations | (Estimate 3h)
+            * User CRUD and autentication on Papernews application | (Estimate 3h) | I1
+         * News operations | (Estimate 21h)
+            * User defined sources of news (in form of links/custom urls) | (Estimate 10h) | I2
+            * Search (by date, name, keywords,...) | (Estimate 5h) | I2
+            * Unique short id generator for news and daily news | (Estimate 1h) | I2
+            * Per hour frontpage generator | (Estimate 1h) - @kelj0 | I2
+            * Export of daily news in desired format | (Estimate 3h) | I1
+            * Subscription filter | (Estimate 1h) | I1
 
-3. Links agregators
-    1. Develop metadata extractor from RSS
-    2. Develop metadata extractor for websites without RSS support
+4. Links agregators | (Estimate 12h BC/20h WC)
+    * Metadata extractor from RSS | (Estimate 2h) | I1
+    * Metadata extractor for websites without RSS support | (Estimate 10h) | I2
 
-4. Website parser
-    1. Develop global scraper for key metadata (key = crucial parameters from which the Papernews content will be generated, parameters are: html.body, html.title, html.p)
-    2. Develop parser that generates summary from scraped data (scraped in step 2.)
-    3. Develop NLP (Natural Language Processor) that generates summary from scraped data (scraped in step 2.)
+5. Website parser | (Estimate 16h BC/25h WC)
+    * Global scraper for key metadata (key = crucial parameters from which the Papernews content will be generated, parameters are: html.body, html.title, html.p) | (Estimate 8h) | I1
+    * Integration with "smmry" from scraped data (scraped in step 2.) | (Estimate 8h) | I2
 
-5. News generator
-    1. Develop HTML and PDF formats of Papernews
+6. Deployment | (Estimate 10h BC/15h WC)
+    * Application deployment | (Estimate 10h) | I3
 
-6. PapernNewsAPI
-    1. Develop API interface for Papernews
-
-7. Database
-    1. Develop database
-
-8. Deployment
-    1. Develop project schedule
-    2. Application deployment
+Iterration estimate
+------------------------------
+#. I1 estimate 32h BC / 60h WC
+#. I2 estimate 39h BC / 80 WC
+#. I3 estimate 14h BC / 20 WC
