@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Specification &#8212; Papernews 0.1 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -23,12 +22,12 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -241,7 +240,7 @@
         
               <div>
                 
-  <section id="specification">
+  <div class="section" id="specification">
 <h1>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h1>
 <p>Table of contents</p>
 <ol class="arabic simple">
@@ -250,13 +249,13 @@
 <li><p>Interaction between components</p></li>
 <li><p>Estimated time and cost</p></li>
 </ol>
-<section id="description-and-purpose-of-papernews">
+<div class="section" id="description-and-purpose-of-papernews">
 <h2>Description and purpose of Papernews<a class="headerlink" href="#description-and-purpose-of-papernews" title="Permalink to this headline">¶</a></h2>
 <p>Papernews is an application for generating short summary from given news agregators or directly from a newsletters web sites.
 The user can define which news he wants to follow and the application will generate new Papernews at the end of each day.
 The user will be given the Papernews as portable document format that he can recieve via e-mail or he can chose to download it.</p>
-</section>
-<section id="components">
+</div>
+<div class="section" id="components">
 <h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <p>Papernews has the following components:</p>
 <ol class="arabic simple">
@@ -270,7 +269,7 @@ The user will be given the Papernews as portable document format that he can rec
 <li><p>User created list of news for category</p></li>
 <li><p>Multiple Papernews templates</p></li>
 </ol>
-<section id="web-interface">
+<div class="section" id="web-interface">
 <h3>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h3>
 <p>User operations
 User can create, remove and edit his account.
@@ -336,8 +335,8 @@ to search that news by ID or access <a class="reference external" href="https://
 </ul>
 </dd>
 </dl>
-</section>
-<section id="links-agregator">
+</div>
+<div class="section" id="links-agregator">
 <h3>Links agregator<a class="headerlink" href="#links-agregator" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
 <dt>RSS metadata extractor</dt><dd><ul class="simple">
@@ -369,34 +368,34 @@ to search that news by ID or access <a class="reference external" href="https://
 </ul>
 </dd>
 </dl>
-</section>
-<section id="website-parser">
+</div>
+<div class="section" id="website-parser">
 <h3>Website parser<a class="headerlink" href="#website-parser" title="Permalink to this headline">¶</a></h3>
 <p>Using prepared links scrapes website for summary of that news.
 After scraping it glues metadata from agregator and prepares newly created blob of data for news generator</p>
-</section>
-<section id="news-generator">
+</div>
+<div class="section" id="news-generator">
 <h3>News generator<a class="headerlink" href="#news-generator" title="Permalink to this headline">¶</a></h3>
 <p>Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.</p>
-</section>
-<section id="parsed-news-api">
+</div>
+<div class="section" id="parsed-news-api">
 <h3>Parsed news API<a class="headerlink" href="#parsed-news-api" title="Permalink to this headline">¶</a></h3>
 <p>API thats provides access to the news data.</p>
-</section>
-<section id="database">
+</div>
+<div class="section" id="database">
 <h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
 <p>Database that stores information about users and Papernews</p>
-</section>
-<section id="application-deployment">
+</div>
+<div class="section" id="application-deployment">
 <h3>Application deployment<a class="headerlink" href="#application-deployment" title="Permalink to this headline">¶</a></h3>
 <p>Deployment of the Papernews applcaiton</p>
-</section>
-</section>
-<section id="interaction-between-components">
+</div>
+</div>
+<div class="section" id="interaction-between-components">
 <h2>Interaction between components<a class="headerlink" href="#interaction-between-components" title="Permalink to this headline">¶</a></h2>
 <img alt="Interaction between components" src="_images/diag.png" />
-</section>
-<section id="estimated-time-and-cost">
+</div>
+<div class="section" id="estimated-time-and-cost">
 <h2>Estimated time and cost<a class="headerlink" href="#estimated-time-and-cost" title="Permalink to this headline">¶</a></h2>
 <img alt="Estimated time of imlpementation" src="_images/timeestimate.png" />
 <p>Estimated cost for 22 days of 2 developers is</p>
@@ -406,13 +405,18 @@ After scraping it glues metadata from agregator and prepares newly created blob 
 <li><p>Overhead 4h - $140</p></li>
 </ol>
 <p><strong>Total of $12810</strong></p>
-</section>
-<section id="work-breakdown-structure-wbs">
+</div>
+<div class="section" id="work-breakdown-structure-wbs">
 <h2>Work Breakdown Structure (WBS)<a class="headerlink" href="#work-breakdown-structure-wbs" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Develop project schedule | (Estimate 2h BC/4h WC) | I1</p></li>
-<li><p>Database | (Estimate 4h BC/8h WC)
-* Database diagram | (Estimate 4h) | I1</p></li>
+<li><dl class="simple">
+<dt>Database | (Estimate 4h BC/8h WC)</dt><dd><ul class="simple">
+<li><p>Database diagram | (Estimate 4h) | I1</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 <li><dl class="simple">
 <dt>Web interface | (Estimate 41h BC/80h WC)</dt><dd><ul class="simple">
 <li><dl class="simple">
@@ -498,16 +502,17 @@ After scraping it glues metadata from agregator and prepares newly created blob 
 </dl>
 </li>
 </ol>
-</section>
-<section id="iterration-estimate">
+<img alt="WBS" src="_images/wbs.png" />
+</div>
+<div class="section" id="iterration-estimate">
 <h2>Iterration estimate<a class="headerlink" href="#iterration-estimate" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>I1 estimate 32h BC / 60h WC</p></li>
 <li><p>I2 estimate 39h BC / 80 WC</p></li>
 <li><p>I3 estimate 14h BC / 20 WC</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
