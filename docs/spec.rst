@@ -147,29 +147,28 @@ Work Breakdown Structure (WBS)
 ------------------------------
 1. Develop project schedule | (Estimate 2h BC/4h WC) | I1
 2. Database | (Estimate 4h BC/8h WC)
-   * Database diagram | (Estimate 4h) | I1
+    * Database diagram | (Estimate 4h) | I1
 3. Web interface | (Estimate 41h BC/80h WC)
-     * Papernews Frontend | (Estimate 17h)
-         * Landing page | (Estimate 5h)
+    * Papernews Frontend | (Estimate 17h)
+        * Landing page | (Estimate 5h)
             * SEO (search engine optimizaion) | (Estimate 4h) | I3
             * Page that describes Papernews features | (Estimate 1h) | I2
-         * Design and implementation of Papernews templates | (Estimate 6h)
+        * Design and implementation of Papernews templates | (Estimate 6h)
             * Custom templates design | (Estimate 3h) | I1
             * Custom templates implementation | (Estimate 3h) | I2
-         * Static parts of Papernews | (Estimate 6h)
+        * Static parts of Papernews | (Estimate 6h)
             * User pages (Login, Register, User profile) | (Estimate 3h) | I1
             * Base layout (news checkbox filter, navbar) | (Estimate 3h) | I1
-     * Papernews Backend | (Estimate 24h)
-         * User operations | (Estimate 3h)
+    * Papernews Backend | (Estimate 24h)
+        * User operations | (Estimate 3h)
             * User CRUD and autentication on Papernews application | (Estimate 3h) | I1
-         * News operations | (Estimate 21h)
+        * News operations | (Estimate 21h)
             * User defined sources of news (in form of links/custom urls) | (Estimate 10h) | I2
             * Search (by date, name, keywords,...) | (Estimate 5h) | I2
             * Unique short id generator for news and daily news | (Estimate 1h) | I2
             * Per hour frontpage generator | (Estimate 1h) - @kelj0 | I2
             * Export of daily news in desired format | (Estimate 3h) | I1
             * Subscription filter | (Estimate 1h) | I1
-
 4. Links agregators | (Estimate 12h BC/20h WC)
     * Metadata extractor from RSS | (Estimate 2h) | I1
     * Metadata extractor for websites without RSS support | (Estimate 10h) | I2
@@ -177,9 +176,13 @@ Work Breakdown Structure (WBS)
 5. Website parser | (Estimate 16h BC/25h WC)
     * Global scraper for key metadata (key = crucial parameters from which the Papernews content will be generated, parameters are: html.body, html.title, html.p) | (Estimate 8h) | I1
     * Integration with "smmry" from scraped data (scraped in step 2.) | (Estimate 8h) | I2
-
 6. Deployment | (Estimate 10h BC/15h WC)
     * Application deployment | (Estimate 10h) | I3
+
+
+.. image:: img/wbs.png
+  :alt: WBS
+
 
 Iterration estimate
 ------------------------------
