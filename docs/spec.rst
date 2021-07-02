@@ -77,7 +77,7 @@ Papernews are portable
     * Papernews can be downloaded
     * Papernews can be recieved via e-mail
         * Users can also schedule tailored e-mails
-    * Papernews can be viewed as HTML    
+    * Papernews can be viewed as HTML
 
 
 Links agregator
@@ -125,7 +125,7 @@ Deployment of the Papernews applcaiton
 
 Interaction between components
 ------------------------------
-.. image:: img/diag.png
+.. image:: img/papernews_architecture.png
   :alt: Interaction between components
 
 
