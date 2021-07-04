@@ -32,52 +32,35 @@ Papernews has the following components:
 #. User created list of news for category
 #. Multiple Papernews templates
 
-
 Web interface
 ^^^^^^^^^^^^^
 
-User operations
-User can create, remove and edit his account.
-If user created account and logins, he will be able to access site.
-User can chose Papernews content based on predifined choice.
+User can see a landing page that describes Papernews features.
+User can register, login remove or edit his account. If user is logged in,
+he will be able to access the news page. On the news page, user can filter 
+different sources of article aggregators (news providers). There are multiple
+options to filter by:
+    * default article aggregators (hackernews, reddit)
+    * custom user provided article aggregators
+    * category (multiple premade article aggregators) for eg. sports, politics
+    * specific daily news genereted for the chosen hour
+  
+User can also search articles by:
+    * article id
+    * web interface will create short article ID that will ease access to the 
+      news if user printed his daily news on paper.
+    * for example below the heading of one news there will be an ID like 
+      "123abcd" and user will be able to search that news by ID or access 
+      https://papernews.com/short/123abcd to view that specific news article.
+    * article date created
+    * article keywords
+    * article category
 
-
-Landing page
-    * SEO (search engine optimizaion)
-    * Page that describes Papernews features
-
-Design and imlpementation of Papernews templates
-    * Custom templates design
-    * Custom templates implementation
-
-Develop news subscriber
-    * Page has static (content choser, temaplete choser) and dynamic parts (changing templates of Papernews)
-    * User can filter which news he will see using checkboxes of links that he proveded to the site
-    * Web interface provides aggregated news (for eg. newspapers like format) from user defined rss links
-    * Checkboxes include:
-        * Hackernews homepage support
-        * Reddit homepage support
-        * Subreddit support
-        * Support for current (maintenance) and new sites with each new version
-
-Papernews Search
-    * Search by:
-        * Papernews id
-        * Web interface will created short news ID that will ease access to the news if user printed his daily news on paper.
-        * For example below the heading of one news there will be an ID like "123abcd" and user will be able 
-          to search that news by ID or access https://Papernews.com/short/123abcd to view that specific news article.
-        * Papernews date created
-        * Papernews keywords
-        * Papernews category
-    
-Per hour frontpage generator
-    * Papernews content can be updated for desired time periods of day
-
-Papernews are portable
-    * Papernews can be downloaded
-    * Papernews can be recieved via e-mail
-        * Users can also schedule tailored e-mails
-    * Papernews can be viewed as HTML
+User can choose between different templates (looks) for generating daily news.
+User can get his generated daily news:
+    * via e-mail
+    * as HTML
+    * as PDF
 
 
 Links agregator
@@ -104,15 +87,13 @@ Website parser
 Using prepared links scrapes website for summary of that news.
 After scraping it glues metadata from agregator and prepares newly created blob of data for news generator
 
+* Global scraper for key metadata (key = crucial parameters from which the Papernews content will be generated, parameters are: html.body, html.title, html.p) | (Estimate 8h) | I1
+* Integration with "smmry" from scraped data (scraped in step 2.) | (Estimate 8h) | I2
+
 
 News generator
 ^^^^^^^^^^^^^^
 Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.
-
-
-Parsed news API
-^^^^^^^^^^^^^^^
-API thats provides access to the news data.
 
 
 Database
