@@ -22,15 +22,20 @@ Components
 
 Papernews has the following components:
 
+#. Database
 #. Web interface
-#. Links agregator
+#. Links aggregator
 #. Website parser
-#. News generator
-#. Parsed news API
-#. NLP summary and topic generator
-#. Parsers and scrapers for news without RSS
-#. User created list of news for category
-#. Multiple Papernews templates
+#. Daily news generator
+
+
+Database
+^^^^^^^^
+We are using PostgreSQL as database.
+
+Database diagram:
+`...`
+
 
 Web interface
 ^^^^^^^^^^^^^
@@ -40,65 +45,85 @@ User can register, login remove or edit his account. If user is logged in,
 he will be able to access the news page. On the news page, user can filter 
 different sources of article aggregators (news providers). There are multiple
 options to filter by:
-    * default article aggregators (hackernews, reddit)
-    * custom user provided article aggregators
-    * category (multiple premade article aggregators) for eg. sports, politics
-    * specific daily news genereted for the chosen hour
+
+* default article aggregators (hackernews, reddit)
+* custom user provided article aggregators
+* category (multiple premade article aggregators) for eg. sports, politics
+* specific daily news genereted for the chosen hour
   
+
 User can also search articles by:
-    * article id
-    * web interface will create short article ID that will ease access to the 
-      news if user printed his daily news on paper.
-    * for example below the heading of one news there will be an ID like 
-      "123abcd" and user will be able to search that news by ID or access 
-      https://papernews.com/short/123abcd to view that specific news article.
-    * article date created
-    * article keywords
-    * article category
+
+* article id
+* web interface will create short article ID that will ease access to the 
+    news if user printed his daily news on paper.
+
+* for example below the heading of one news there will be an ID like 
+    "123abcd" and user will be able to search that news by ID or access 
+    https://papernews.com/short/123abcd to view that specific news article.
+
+* article date created
+* article keywords
+* article category
 
 User can choose between different templates (looks) for generating daily news.
 User can get his generated daily news:
-    * via e-mail
-    * as HTML
-    * as PDF
+
+* via e-mail
+* as HTML
+* as PDF
+
+Web interface TODO...
 
 
-Links agregator
-^^^^^^^^^^^^^^^
-RSS metadata extractor
-    * Component that recieves user RSS links, transforms it and prepares it for website parser.
-    * Specifically extracts metadata from RSS like:
-        #. news heading
-        #. user that posted that link
-        #. source link (eg. hackernews)
-        #. link to the actual news
+Links aggregator
+^^^^^^^^^^^^^^^^
+This component parses article aggregators for articles and metadata about them.
+It can parse 2 different types of feeds:
 
-NoRSS metadata extractor
-    * Component that recieves raw user links (without RSS support), scrapes them and prepares it for website parser.
-    * Specifically extracts metadata like:
-        #. news heading
-        #. user that posted that link
-        #. source link (eg. hackernews)
-        #. link to the actual news
+* Feed with the RSS
+* Feed without the RSS
+
+If aggregator has the RSS for its feed, component will use `feedparser
+<https://feedparser.readthedocs.io>`_. Using parser, it extracts:
+
+* article heading
+* user that posted that link
+* link to thread on aggregator
+* link to actual article
+
+Otherwise, if the user provided a link to an article aggregator that doesn't 
+support the RSS, in-house parser will be used for extraction of same metadata
+as if feedparser was used.
+
+After parsing it sends ready to be scraped articles with metadata to flask
+which writes it to the database.
+
+Links aggregator can be horizontaly scaled if needed.
 
 
 Website parser
 ^^^^^^^^^^^^^^
-Using prepared links scrapes website for summary of that news.
-After scraping it glues metadata from agregator and prepares newly created blob of data for news generator
+Using prepared links scrapes website for summary, image etc. of that article.
+After scraping reports prepared blob of data back to the flask api.
+In first iteration smmry will be used to summarize article body, later if 
+we get more budged, in-house natural language processing alghorithms will be 
+used to get summary of article body.
 
-* Global scraper for key metadata (key = crucial parameters from which the Papernews content will be generated, parameters are: html.body, html.title, html.p) | (Estimate 8h) | I1
-* Integration with "smmry" from scraped data (scraped in step 2.) | (Estimate 8h) | I2
-
-
-News generator
-^^^^^^^^^^^^^^
-Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.
+Website parser can be horizontaly scaled if needed.
 
 
-Database
-^^^^^^^^
-Database that stores information about users and Papernews
+Daily news generator
+^^^^^^^^^^^^^^^^^^^^
+Generates daily news in HTML format.
+While generating, generator will create codes for each of the articles and 
+original threads where article was posted so that user can use those in a form
+of a url shortener. For example user can input code 123456 in search and get 
+redirected to actual article that had that 123456 generated in daily news.
+Codes are permanently attached to link.
+
+If needed and budged is granted, generator can be created in such way to support
+horizontal scaling.
 
 Application deployment
 ^^^^^^^^^^^^^^^^^^^^^^

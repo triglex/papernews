@@ -173,13 +173,18 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#database">
+     Database
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#web-interface">
      Web interface
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#links-agregator">
-     Links agregator
+    <a class="reference internal nav-link" href="#links-aggregator">
+     Links aggregator
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -188,13 +193,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#news-generator">
-     News generator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#database">
-     Database
+    <a class="reference internal nav-link" href="#daily-news-generator">
+     Daily news generator
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -254,16 +254,18 @@ The user will be given the Papernews as portable document format that he can rec
 <h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <p>Papernews has the following components:</p>
 <ol class="arabic simple">
+<li><p>Database</p></li>
 <li><p>Web interface</p></li>
-<li><p>Links agregator</p></li>
+<li><p>Links aggregator</p></li>
 <li><p>Website parser</p></li>
-<li><p>News generator</p></li>
-<li><p>Parsed news API</p></li>
-<li><p>NLP summary and topic generator</p></li>
-<li><p>Parsers and scrapers for news without RSS</p></li>
-<li><p>User created list of news for category</p></li>
-<li><p>Multiple Papernews templates</p></li>
+<li><p>Daily news generator</p></li>
 </ol>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<p>We are using PostgreSQL as database.</p>
+<p>Database diagram:
+<cite>…</cite></p>
+</div>
 <div class="section" id="web-interface">
 <h3>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h3>
 <p>User can see a landing page that describes Papernews features.
@@ -271,87 +273,80 @@ User can register, login remove or edit his account. If user is logged in,
 he will be able to access the news page. On the news page, user can filter
 different sources of article aggregators (news providers). There are multiple
 options to filter by:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>default article aggregators (hackernews, reddit)</p></li>
 <li><p>custom user provided article aggregators</p></li>
 <li><p>category (multiple premade article aggregators) for eg. sports, politics</p></li>
 <li><p>specific daily news genereted for the chosen hour</p></li>
 </ul>
-</div></blockquote>
-<dl class="simple">
-<dt>User can also search articles by:</dt><dd><ul class="simple">
+<p>User can also search articles by:</p>
+<ul class="simple">
 <li><p>article id</p></li>
-<li><p>web interface will create short article ID that will ease access to the
-news if user printed his daily news on paper.</p></li>
-<li><p>for example below the heading of one news there will be an ID like
-“123abcd” and user will be able to search that news by ID or access
-<a class="reference external" href="https://papernews.com/short/123abcd">https://papernews.com/short/123abcd</a> to view that specific news article.</p></li>
+<li><dl class="simple">
+<dt>web interface will create short article ID that will ease access to the</dt><dd><p>news if user printed his daily news on paper.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>for example below the heading of one news there will be an ID like</dt><dd><p>“123abcd” and user will be able to search that news by ID or access
+<a class="reference external" href="https://papernews.com/short/123abcd">https://papernews.com/short/123abcd</a> to view that specific news article.</p>
+</dd>
+</dl>
+</li>
 <li><p>article date created</p></li>
 <li><p>article keywords</p></li>
 <li><p>article category</p></li>
 </ul>
-</dd>
-</dl>
 <p>User can choose between different templates (looks) for generating daily news.
 User can get his generated daily news:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>via e-mail</p></li>
 <li><p>as HTML</p></li>
 <li><p>as PDF</p></li>
 </ul>
-</div></blockquote>
+<p>Web interface TODO…</p>
 </div>
-<div class="section" id="links-agregator">
-<h3>Links agregator<a class="headerlink" href="#links-agregator" title="Permalink to this headline">¶</a></h3>
-<dl class="simple">
-<dt>RSS metadata extractor</dt><dd><ul class="simple">
-<li><p>Component that recieves user RSS links, transforms it and prepares it for website parser.</p></li>
-<li><dl class="simple">
-<dt>Specifically extracts metadata from RSS like:</dt><dd><ol class="arabic simple">
-<li><p>news heading</p></li>
-<li><p>user that posted that link</p></li>
-<li><p>source link (eg. hackernews)</p></li>
-<li><p>link to the actual news</p></li>
-</ol>
-</dd>
-</dl>
-</li>
+<div class="section" id="links-aggregator">
+<h3>Links aggregator<a class="headerlink" href="#links-aggregator" title="Permalink to this headline">¶</a></h3>
+<p>This component parses article aggregators for articles and metadata about them.
+It can parse 2 different types of feeds:</p>
+<ul class="simple">
+<li><p>Feed with the RSS</p></li>
+<li><p>Feed without the RSS</p></li>
 </ul>
-</dd>
-<dt>NoRSS metadata extractor</dt><dd><ul class="simple">
-<li><p>Component that recieves raw user links (without RSS support), scrapes them and prepares it for website parser.</p></li>
-<li><dl class="simple">
-<dt>Specifically extracts metadata like:</dt><dd><ol class="arabic simple">
-<li><p>news heading</p></li>
+<p>If aggregator has the RSS for its feed, component will use <a class="reference external" href="https://feedparser.readthedocs.io">feedparser</a>. Using parser, it extracts:</p>
+<ul class="simple">
+<li><p>article heading</p></li>
 <li><p>user that posted that link</p></li>
-<li><p>source link (eg. hackernews)</p></li>
-<li><p>link to the actual news</p></li>
-</ol>
-</dd>
-</dl>
-</li>
+<li><p>link to thread on aggregator</p></li>
+<li><p>link to actual article</p></li>
 </ul>
-</dd>
-</dl>
+<p>Otherwise, if the user provided a link to an article aggregator that doesn’t
+support the RSS, in-house parser will be used for extraction of same metadata
+as if feedparser was used.</p>
+<p>After parsing it sends ready to be scraped articles with metadata to flask
+which writes it to the database.</p>
+<p>Links aggregator can be horizontaly scaled if needed.</p>
 </div>
 <div class="section" id="website-parser">
 <h3>Website parser<a class="headerlink" href="#website-parser" title="Permalink to this headline">¶</a></h3>
-<p>Using prepared links scrapes website for summary of that news.
-After scraping it glues metadata from agregator and prepares newly created blob of data for news generator</p>
-<ul class="simple">
-<li><p>Global scraper for key metadata (key = crucial parameters from which the Papernews content will be generated, parameters are: html.body, html.title, html.p) | (Estimate 8h) | I1</p></li>
-<li><p>Integration with “smmry” from scraped data (scraped in step 2.) | (Estimate 8h) | I2</p></li>
-</ul>
+<p>Using prepared links scrapes website for summary, image etc. of that article.
+After scraping reports prepared blob of data back to the flask api.
+In first iteration smmry will be used to summarize article body, later if
+we get more budged, in-house natural language processing alghorithms will be
+used to get summary of article body.</p>
+<p>Website parser can be horizontaly scaled if needed.</p>
 </div>
-<div class="section" id="news-generator">
-<h3>News generator<a class="headerlink" href="#news-generator" title="Permalink to this headline">¶</a></h3>
-<p>Uses data from webside parser, and generates portable document format that can be downloaded or sent via e-mail to your address.</p>
-</div>
-<div class="section" id="database">
-<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
-<p>Database that stores information about users and Papernews</p>
+<div class="section" id="daily-news-generator">
+<h3>Daily news generator<a class="headerlink" href="#daily-news-generator" title="Permalink to this headline">¶</a></h3>
+<p>Generates daily news in HTML format.
+While generating, generator will create codes for each of the articles and
+original threads where article was posted so that user can use those in a form
+of a url shortener. For example user can input code 123456 in search and get
+redirected to actual article that had that 123456 generated in daily news.
+Codes are permanently attached to link.</p>
+<p>If needed and budged is granted, generator can be created in such way to support
+horizontal scaling.</p>
 </div>
 <div class="section" id="application-deployment">
 <h3>Application deployment<a class="headerlink" href="#application-deployment" title="Permalink to this headline">¶</a></h3>
