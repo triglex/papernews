@@ -131,7 +131,7 @@ Deployment of the Papernews applcaiton
 
 Interaction between components
 ------------------------------
-.. image:: img/papernews_architecture.png
+.. image:: img/papernews_architecture_v2.png
   :alt: Interaction between components
 
 

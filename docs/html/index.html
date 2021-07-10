@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>The Papernews Project &#8212; Papernews 0.1 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,12 +23,12 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -262,14 +263,14 @@
         
               <div>
                 
-  <div class="section" id="the-papernews-project">
+  <section id="the-papernews-project">
 <h1>The Papernews Project<a class="headerlink" href="#the-papernews-project" title="Permalink to this headline">¶</a></h1>
 <p>The papernews is a learning project started in 2021.</p>
-<div class="section" id="solution-architecture">
+<section id="solution-architecture">
 <h2>Solution architecture<a class="headerlink" href="#solution-architecture" title="Permalink to this headline">¶</a></h2>
 <img alt="Arch diag" src="_images/diag.png" />
-</div>
-<div class="section" id="development-environment">
+</section>
+<section id="development-environment">
 <h2>Development environment<a class="headerlink" href="#development-environment" title="Permalink to this headline">¶</a></h2>
 <p>To start developing on the project you should:</p>
 <ol class="arabic simple">
@@ -278,12 +279,12 @@
 <li><p>Install development requirements <cite>pip3 install -r requirements-dev.txt</cite></p></li>
 <li><p>Run tests to check if everything is working <cite>make ci</cite></p></li>
 </ol>
-</div>
-<div class="section" id="deployment">
+</section>
+<section id="deployment">
 <h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
 <p>Todo.</p>
-</div>
-<div class="section" id="specification">
+</section>
+<section id="specification">
 <h2>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h2>
 <p>Table of contents</p>
 <ol class="arabic simple">
@@ -292,13 +293,13 @@
 <li><p>Interaction between components</p></li>
 <li><p>Estimated time and cost</p></li>
 </ol>
-<div class="section" id="description-and-purpose-of-papernews">
+<section id="description-and-purpose-of-papernews">
 <h3>Description and purpose of Papernews<a class="headerlink" href="#description-and-purpose-of-papernews" title="Permalink to this headline">¶</a></h3>
 <p>Papernews is an application for generating short summary from given news agregators or directly from a newsletters web sites.
 The user can define which news he wants to follow and the application will generate new Papernews at the end of each day.
 The user will be given the Papernews as portable document format that he can recieve via e-mail or he can chose to download it.</p>
-</div>
-<div class="section" id="components">
+</section>
+<section id="components">
 <h3>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h3>
 <p>Papernews has the following components:</p>
 <ol class="arabic simple">
@@ -308,13 +309,13 @@ The user will be given the Papernews as portable document format that he can rec
 <li><p>Website parser</p></li>
 <li><p>Daily news generator</p></li>
 </ol>
-<div class="section" id="database">
+<section id="database">
 <h4>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h4>
 <p>We are using PostgreSQL as database.</p>
 <p>Database diagram:
 <cite>…</cite></p>
-</div>
-<div class="section" id="web-interface">
+</section>
+<section id="web-interface">
 <h4>Web interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h4>
 <p>User can see a landing page that describes Papernews features.
 User can register, login remove or edit his account. If user is logged in,
@@ -353,8 +354,8 @@ User can get his generated daily news:</p>
 <li><p>as PDF</p></li>
 </ul>
 <p>Web interface TODO…</p>
-</div>
-<div class="section" id="links-aggregator">
+</section>
+<section id="links-aggregator">
 <h4>Links aggregator<a class="headerlink" href="#links-aggregator" title="Permalink to this headline">¶</a></h4>
 <p>This component parses article aggregators for articles and metadata about them.
 It can parse 2 different types of feeds:</p>
@@ -375,8 +376,8 @@ as if feedparser was used.</p>
 <p>After parsing it sends ready to be scraped articles with metadata to flask
 which writes it to the database.</p>
 <p>Links aggregator can be horizontaly scaled if needed.</p>
-</div>
-<div class="section" id="website-parser">
+</section>
+<section id="website-parser">
 <h4>Website parser<a class="headerlink" href="#website-parser" title="Permalink to this headline">¶</a></h4>
 <p>Using prepared links scrapes website for summary, image etc. of that article.
 After scraping reports prepared blob of data back to the flask api.
@@ -384,8 +385,8 @@ In first iteration smmry will be used to summarize article body, later if
 we get more budged, in-house natural language processing alghorithms will be
 used to get summary of article body.</p>
 <p>Website parser can be horizontaly scaled if needed.</p>
-</div>
-<div class="section" id="daily-news-generator">
+</section>
+<section id="daily-news-generator">
 <h4>Daily news generator<a class="headerlink" href="#daily-news-generator" title="Permalink to this headline">¶</a></h4>
 <p>Generates daily news in HTML format.
 While generating, generator will create codes for each of the articles and
@@ -395,17 +396,17 @@ redirected to actual article that had that 123456 generated in daily news.
 Codes are permanently attached to link.</p>
 <p>If needed and budged is granted, generator can be created in such way to support
 horizontal scaling.</p>
-</div>
-<div class="section" id="application-deployment">
+</section>
+<section id="application-deployment">
 <h4>Application deployment<a class="headerlink" href="#application-deployment" title="Permalink to this headline">¶</a></h4>
 <p>Deployment of the Papernews applcaiton</p>
-</div>
-</div>
-<div class="section" id="interaction-between-components">
+</section>
+</section>
+<section id="interaction-between-components">
 <h3>Interaction between components<a class="headerlink" href="#interaction-between-components" title="Permalink to this headline">¶</a></h3>
-<img alt="Interaction between components" src="_images/papernews_architecture.png" />
-</div>
-<div class="section" id="estimated-time-and-cost">
+<img alt="Interaction between components" src="_images/papernews_architecture_v2.png" />
+</section>
+<section id="estimated-time-and-cost">
 <h3>Estimated time and cost<a class="headerlink" href="#estimated-time-and-cost" title="Permalink to this headline">¶</a></h3>
 <img alt="Estimated time of imlpementation" src="_images/timeestimate.png" />
 <p>Estimated cost for 22 days of 2 developers is</p>
@@ -415,8 +416,8 @@ horizontal scaling.</p>
 <li><p>Overhead 4h - $140</p></li>
 </ol>
 <p><strong>Total of $12810</strong></p>
-</div>
-<div class="section" id="work-breakdown-structure-wbs">
+</section>
+<section id="work-breakdown-structure-wbs">
 <h3>Work Breakdown Structure (WBS)<a class="headerlink" href="#work-breakdown-structure-wbs" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Develop project schedule | (Estimate 2h BC/4h WC) | I1</p></li>
@@ -513,8 +514,8 @@ horizontal scaling.</p>
 </li>
 </ol>
 <img alt="WBS" src="_images/wbs.png" />
-</div>
-<div class="section" id="iterration-estimate">
+</section>
+<section id="iterration-estimate">
 <h3>Iterration estimate<a class="headerlink" href="#iterration-estimate" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>I1 estimate 32h BC / 60h WC</p></li>
@@ -523,17 +524,17 @@ horizontal scaling.</p>
 </ol>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
+</section>
+</section>
+<section id="indices-and-tables">
 <h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
